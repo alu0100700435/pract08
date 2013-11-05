@@ -30,6 +30,33 @@ other.row)
     matres
   end
   
+  def +(other)
+    raise TypeError "Las matrices no pueden multiplicarse" unless()
+    
+    matres = Matriz.new(@row,@col)
+    for i in 0...@row
+      for j in 0...@col
+	matres[i][j]= @matriz[i][j]+other[i][j]
+	end
+      end
+    end
+    matres
+    
+  end
+  
+  def +(other)
+    raise TypeError "Las matrices no pueden multiplicarse" unless()
+    
+    matres = Matriz.new(@row,@col)
+    for i in 0...@row
+      for j in 0...@col
+	matres[i][j]= @matriz[i][j]-other[i][j]
+	end
+      end
+    end
+    matres
+    
+  end
   
   
 end
