@@ -2,22 +2,29 @@ class Matriz
   
   attr_reader :row, :col
   
+  include Enumerable
+
   def initialize(row,col)
     @row,@col = row,col
     @matriz = Array.new(row){Array.new(col,0)}
   end
   
   def [](row,col)
-    @matriz[row,col]
+    @matriz[row][col]
   end
   
-  def []=(row,col, value)
-    @matriz[row,col] = value
+  def []=(row,col,value)
+    @matriz[row][col] = value
+  end
+
+  def each()
+    @matriz.each do |row|
+      row.each { |col| yield col }
+    end
   end
   
   def *(other)
-    raise TypeError "Las matrices no pueden multiplicarse" unless (@col ==
-other.row)
+    raise TypeError "Las matrices no pueden multiplicarse" unless(@col==other.row)
     
     matres = Matriz.new(@row,@col)
     for i in 0...@row
@@ -31,13 +38,12 @@ other.row)
   end
   
   def +(other)
-    raise TypeError "Las matrices no pueden multiplicarse" unless()
+    raise TypeError "Las matrices no pueden multiplicarse" unless(@col== other.col && other.row == @row)
     
     matres = Matriz.new(@row,@col)
     for i in 0...@row
       for j in 0...@col
 	matres[i][j]= @matriz[i][j]+other[i][j]
-	end
       end
     end
     matres
@@ -51,7 +57,7 @@ other.row)
     for i in 0...@row
       for j in 0...@col
 	matres[i][j]= @matriz[i][j]-other[i][j]
-	end
+	
       end
     end
     matres
