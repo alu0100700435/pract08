@@ -62,4 +62,15 @@ describe Matriz do
       @m3[1,1].should eq (0)
     end
   end
+  
+ describe "#Multiplicacion de matrices:" do
+    it "Multiplicacion de m1 y m2" do      
+      @m3=@m1*@m2
+      @m3[0,0].should eq (12)
+      @m3[0,1].should eq (11)
+      @m3[1,0].should eq (26)
+      @m3[1,1].should eq (25)
+    end
+  end
+  
 end
