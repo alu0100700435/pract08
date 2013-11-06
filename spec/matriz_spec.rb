@@ -46,4 +46,20 @@ describe Matriz do
     end
   end
   
+  describe "#Suma y Resta de matrices:" do
+    it "Suma de m1 y m2" do      
+      @m3=@m1+@m2
+      @m3[0,0].should == 3
+      @m3[0,1].should == 5
+      @m3[1,0].should == 8
+      @m3[1,1].should == 8
+    end
+    it "Resta de m1 y m2" do      
+      @m3=@m1-@m2
+      @m3[0,0].should eq (-1)
+      @m3[0,1].should eq (-1)
+      @m3[1,0].should eq (-2)
+      @m3[1,1].should eq (0)
+    end
+  end
 end
