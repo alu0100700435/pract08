@@ -40,4 +40,10 @@ describe Matriz do
      end
   end
   
+   describe "#Representacion de la matriz:" do
+    it "Se ve correctamente" do
+      @m1.show.should eq ("[[1, 2], [3, 4]]")
+    end
+  end
+  
 end
