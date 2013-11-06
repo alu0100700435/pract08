@@ -69,7 +69,7 @@ class Matriz
   end
 
   def show
-    @matriz.inspec
+    @matriz.inspect
   end
   
   
