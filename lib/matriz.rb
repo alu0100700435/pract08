@@ -9,8 +9,13 @@ class Matriz
     @matriz = Array.new(row){Array.new(col,0)}
   end
   
-  def [](row,col)
-    @matriz[row][col]
+  def [](row,col=nil)
+    if(col.nil?)
+      @matriz[row]
+    else
+      @matriz[row][col]
+    end
+    
   end
   
   def []=(row,col,value)
@@ -38,25 +43,24 @@ class Matriz
   end
   
   def +(other)
-    raise TypeError "Las matrices no pueden multiplicarse" unless(@col== other.col && other.row == @row)
-    
+    raise TypeError "Las matrices no pueden sumarse" unless(@col== other.col && other.row == @row)
     matres = Matriz.new(@row,@col)
     for i in 0...@row
       for j in 0...@col
-	matres[i][j]= @matriz[i][j]+other[i][j]
+	matres[i][j] = @matriz[i][j] + other[i][j]
       end
     end
     matres
     
   end
   
-  def +(other)
-    raise TypeError "Las matrices no pueden multiplicarse" unless()
+  def -(other)
+    raise TypeError "Las matrices no pueden restarse" unless(@col== other.col && other.row == @row)
     
     matres = Matriz.new(@row,@col)
     for i in 0...@row
       for j in 0...@col
-	matres[i][j]= @matriz[i][j]-other[i][j]
+	matres[i][j] = @matriz[i][j] - other[i][j]
 	
       end
     end
