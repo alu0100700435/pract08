@@ -1,4 +1,4 @@
-Práctica 8   Raquel Álvarez Hernández - Carlota Lázaro Hernández
+Práctica 8   
 =======
 
 Representación de Matrices usando TDD con la herramienta Rspec. Y herramienta Guardafile
@@ -27,5 +27,6 @@ Se utiliza el método each para recorrer los elementos de la matriz para así po
 Para poder mostrar en string, se define un método llamado show que utiliza inspect para devolver el objeto de una forma razonable como una cadena.
 
 
-Tras realizar la construcción de la práctica la metodología de integración contínua Travis CI nos devuelve que la construcción es la siguiente: https://travis-ci.org/alu0100700435/pract08.png?branch=master
+Tras realizar la construcción de la práctica la metodología de integración contínua Travis CI nos devuelve que la construcción es la siguiente: [![Build Status](https://travis-ci.org/alu0100700435/pract08.png?branch=master)](https://travis-ci.org/alu0100700435/pract08)
 
+Además se usa la gema Guard, que notifica de las modificaciones sobre el sistema de archivos
