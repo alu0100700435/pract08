@@ -67,6 +67,10 @@ class Matriz
     matres
     
   end
+
+  def show
+    @matriz.inspec
+  end
   
   
 end
