@@ -25,4 +25,19 @@ describe Matriz do
     end
   end
 
+  describe "#Enumerable:" do
+    it "Uso ok del enumerable" do
+      i, j = 0, 0
+      @m1.each do |x|
+         x.should == @m1[i, j]
+         if j == 0
+           j = 1
+         else
+           j = 0
+           i = 1
+         end
+       end
+     end
+  end
+  
 end
