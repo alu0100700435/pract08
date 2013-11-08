@@ -1,3 +1,5 @@
+require "fraction.rb"
+
 class Matriz
   
   attr_reader :row, :col
