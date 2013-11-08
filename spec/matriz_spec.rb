@@ -14,10 +14,10 @@ describe Matriz do
     @m2[0,1] = 3
     @m2[1,0] = 5 
     @m2[1,1] = 4
-    @m4[0,0] = Fraction.new(1,4).
-    @m4[0,1] = Fraction.new(1,4).
-    @m4[1,0] = Fraction.new(1,4). 
-    @m4[1,1] = Fraction.new(1,4).
+    @m4[0,0] = Fraction.new(1,4)
+    @m4[0,1] = Fraction.new(1,4)
+    @m4[1,0] = Fraction.new(1,4)
+    @m4[1,1] = Fraction.new(1,4)
   end
   
   describe "#Indexacion:" do
