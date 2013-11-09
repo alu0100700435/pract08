@@ -6,7 +6,7 @@ describe Matriz do
     @m2 = Matriz.new(2,2) 
     @m3 = Matriz.new(2,2)
     @m4 = Matriz.new(2,2)
-   @m1[0,0] = 1 
+    @m1[0,0] = 1 
     @m1[0,1] = 2
     @m1[1,0] = 3 
     @m1[1,1] = 4
@@ -18,7 +18,7 @@ describe Matriz do
     @m4[0,1] = Fraction.new(1,4)
     @m4[1,0] = Fraction.new(1,4)
     @m4[1,1] = Fraction.new(1,4)
-  end
+   end
   
   describe "#Indexacion:" do
     it "Acceso a un elemento de la posicion x,y" do
@@ -70,6 +70,10 @@ describe Matriz do
       @m3=@m4+@m4
       @m3.show.should eq ("[[1/2, 1/2], [1/2, 1/2]]")
     end
+    it "Resta de m4 y m4" do      
+      @m3=@m4-@m4
+      @m3.show.should eq ("[[0/1, 0/1], [0/1, 0/1]]")
+    end
   end
   
  describe "#Multiplicacion de matrices:" do
@@ -79,10 +83,6 @@ describe Matriz do
       @m3[0,1].should eq (11)
       @m3[1,0].should eq (26)
       @m3[1,1].should eq (25)
-    end
-    it "Multiplicacion de m4 y m4" do      
-      @m3=@m4*@m4
-      @m3.show.should eq ("[[1/8, 1/8], [1/8, 1/8]]")
     end
   end
   

@@ -11,9 +11,10 @@ class Fraction
   def initialize(num, den)
     
     com = gcd(num, den)
-    if (den < 0)
+    if (den < 0 && com > 0)
       @num, @den =  ((-1*num)/com), ((-1*den)/com)
-    else 
+    end
+    if (den > 0 && com > 0)
       @num, @den =  num/com, den/com
     end
   end
@@ -76,6 +77,9 @@ class Fraction
     
    def <=>(other)    
      to_float() <=> other.to_float()    
+   end
+   def coerce(other)
+    [self, other]
    end
         
 end

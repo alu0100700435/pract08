@@ -7,8 +7,8 @@ class Matriz
   include Enumerable
 
   def initialize(row,col)
-    raise TypeError "ERROR, filas no es mayor que 0" unless(@row > 0)
     @row,@col = row,col
+    raise TypeError "ERROR, filas no es mayor que 0" unless(@row > 0)
     @matriz = Array.new(row){Array.new(col,0)}
   end
   
@@ -21,8 +21,12 @@ class Matriz
     
   end
   
-  def []=(row,col,value)
-    @matriz[row][col] = value
+  def []=(row,col=nil,value)
+    if(col.nil?)
+      @matriz[row]=value
+    else
+      @matriz[row][col]=value
+    end
   end
 
   def each()
@@ -74,6 +78,9 @@ class Matriz
   def show
     @matriz.inspect
   end
+  def coerce(other)
+    [self, other]
+   end
   
   
 end

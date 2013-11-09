@@ -1,6 +1,6 @@
 $:.unshift File.dirname(__FILE__) + 'lib'
 
-task :default => :spec
+task :default => :lib
 
 
 desc "Espectativas de la clase Matriz"
