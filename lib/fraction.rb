@@ -81,5 +81,8 @@ class Fraction
    def coerce(other)
     [self, other]
    end
+   def show
+    to_f.inspect
+   end
         
 end

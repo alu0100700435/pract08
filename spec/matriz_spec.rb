@@ -47,7 +47,10 @@ describe Matriz do
    describe "#Representacion de la matriz:" do
     it "Se ve correctamente" do
       @m1.show.should eq ("[[1, 2], [3, 4]]")
-      @m4.show.should eq ("[[1/4, 1/4], [1/4, 1/4]]")
+      @m4[0,0].to_f.should == 0.25
+      @m4[0,1].to_f.should == 0.25
+      @m4[1,0].to_f.should == 0.25
+      @m4[1,1].to_f.should == 0.25
     end
   end
   
@@ -68,11 +71,17 @@ describe Matriz do
     end
     it "Suma de m4 y m4" do      
       @m3=@m4+@m4
-      @m3.show.should eq ("[[1/2, 1/2], [1/2, 1/2]]")
+      @m3[0,0].to_f.should == 0.5
+      @m3[0,1].to_f.should == 0.5
+      @m3[1,0].to_f.should == 0.5
+      @m3[1,1].to_f.should == 0.5
     end
     it "Resta de m4 y m4" do      
       @m3=@m4-@m4
-      @m3.show.should eq ("[[0/1, 0/1], [0/1, 0/1]]")
+      @m3[0,0].to_f.should == 0
+      @m3[0,1].to_f.should == 0
+      @m3[1,0].to_f.should == 0
+      @m3[1,1].to_f.should == 0
     end
   end
   
