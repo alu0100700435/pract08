@@ -1,7 +1,7 @@
 require "lib/matriz.rb"
 
 describe Matriz do
-  before :all do
+  before :each do
     @m1 = Matriz.new(2,2)
     @m2 = Matriz.new(2,2) 
     @m3 = Matriz.new(2,2)
